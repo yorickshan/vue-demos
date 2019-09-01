@@ -61,6 +61,23 @@
             </label>
             {{selectedHobbies}}
         </div>
+        <!-- 修饰符 -->
+        <!-- lazy -->
+        <div>
+            <input type="text" v-model.lazy="lazy">
+            {{lazy}}
+        </div>
+        <!-- number -->
+        <!-- v-model 默认为 string 类型 -->
+        <div>
+            <input type="text" v-model.number="number">
+            {{number}} - {{typeof number}}
+        </div>
+        <!-- trim -->
+        <div>
+            <input type="text" v-model.trim="trim">
+            {{trim}}
+        </div>
     </div>
     <script>
         const app = new Vue({
@@ -76,7 +93,10 @@
                     fruit: "",
                     fruits: [],
                     allHobbies: ["唱", "跳", "篮球"],
-                    selectedHobbies: []
+                    selectedHobbies: [],
+                    lazy: "",
+                    number: 0,
+                    trim: ""
                 }
             },
             methods: {
